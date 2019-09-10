@@ -1,0 +1,19 @@
+{
+  "name": "ern-navigation-js-api-impl-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ern-navigation": "1.1.4"
+  },
+  "ern": {
+    "containerGen": {
+      "hasConfig": false,
+      "moduleName": "ErnNavigationImplJs"
+    },
+    "moduleType": "ern-js-api-impl"
+  },
+  "keywords": [
+    "ern-js-api-impl"
+  ]
+}

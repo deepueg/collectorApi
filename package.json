@@ -1,0 +1,28 @@
+{
+  "author": "d0g00g4",
+  "dependencies": {
+    "react-native-electrode-bridge": "1.5.x"
+  },
+  "description": "ERN Generated API for collectorApi",
+  "devDependencies": {
+    "flow-bin": "^0.47.0"
+  },
+  "ern": {
+    "message": {
+      "moduleName": "collectorApi",
+      "namespace": "com.collectorApi.ern",
+      "apiSchemaPath": "schema.json",
+      "artifactId": "react-native-collectorApi-api"
+    },
+    "moduleType": "ern-api"
+  },
+  "keywords": [
+    "ern-api"
+  ],
+  "main": "javascript/src/index.js",
+  "name": "collector-api",
+  "scripts": {
+    "flow": "flow"
+  },
+  "version": "1.0.0"
+}

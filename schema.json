@@ -1,0 +1,119 @@
+
+  {
+    "swagger": "2.0",
+    "info": {
+      "description": "Walmart Item Module",
+      "title": "WalmartItem",
+      "contact": {
+        "name": "ERN Mobile Platform Team"
+      }
+    },
+    "paths": {
+      "/items": {
+        "get": {
+          "tags": [
+          "Collector"
+          ],
+          "description": "Returns all items from the system that the user has access to",
+          "operationId": "postEvent",
+          "parameters": [{
+            "name": "type",
+            "in": "query",
+            "description": "maximum number of results to return",
+            "required": false,
+            "type": "string"
+          }],
+          "responses": {
+            "200": {
+              "description": "Item response",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Item"
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+          "Collector"
+          ],
+          "description": "Creates a Item in the store.",
+          "operationId": "addItem",
+          "parameters": [{
+            "name": "item",
+            "in": "body",
+            "description": "Item to add",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          }],
+          "responses": {
+            "200": {
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "event/itemAdded": {
+        "event": {
+          "tags": [
+          "Collector"
+          ],
+          "operationId": "itemAdded",
+          "parameters": [{
+            "name": "itemId",
+            "in": "path",
+            "description": "Event to notify new item added",
+            "required": true,
+            "type": "string"
+          }]
+        }
+      }
+    },
+    "definitions": {
+      "Item": {
+        "type": "object",
+        "required": [
+        "name",
+        "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginEvent": {
+        "type": "object",
+        "required": [
+          "name",
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+  
